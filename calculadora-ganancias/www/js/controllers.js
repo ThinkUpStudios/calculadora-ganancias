@@ -23,17 +23,17 @@ angular.module('starter.controllers', [])
 	$scope.cantidadHijos += valor;
 	if ($scope.cantidadHijos < 0) {
 		$scope.cantidadHijos = 0;
-		$scope.calcular();
+		
 	}
+	$scope.calcular();
 
   };
   $scope.modificarFamiliaresACargo = function (valor) {
 	$scope.familiaresACargo += valor;
 	if ($scope.familiaresACargo < 0) {
 		$scope.familiaresACargo = 0;
-		$scope.calcular();
-		
 	}
+	$scope.calcular();
 
   };  
   
