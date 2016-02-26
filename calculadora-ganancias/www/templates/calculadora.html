@@ -5,23 +5,35 @@
     </div>
     <div class="content has-header" ng-controller="CalculatorCtrl">
       <div class="list list-inset">
-        <label class="item item-input">
-          <span style="min-width: 10em" class="input-label">Sueldo Bruto en $</span>
+        <div class="row item item-input" >
+          <span class="col col-50 ">Sueldo Bruto en $ </span>
           <input class="big" style="text-align: right" type="number" min="0" ng-model="sueldoBruto" ng-change="calcular()"/>
-        </label>
+        </div>
 
-        <ion-toggle ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">Conyuge a Cargo
+		
+        <ion-toggle class="toggle-chico" ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">Conyuge a Cargo
         </ion-toggle>
 
-        <label class="item item-input">
-          <span style="min-width: 10em;" class="input-label">Familiares a Cargo </span>
-          <input style="text-align: right" type="number" ng-model="familiaresACargo" min=0 max="20" ng-change="calcular()"/>
-        </label>
+		<div class="row item item-input">
+			<span class="col col-50 ">Familiares a Cargo</span>
+			<div class="button-bar center col-50">
+				<button ng-click="modificarFamiliaresACargo(-1)" class="button button-clear"><i class="icon ion-ios-arrow-left assertive"></i></button>
+				<span class="display-numero"><b>{{familiaresACargo}}</b></span>
+				<button ng-click="modificarFamiliaresACargo(1)" class="button button-clear"><i class="icon ion-ios-arrow-right balanced"></i></button>
+			</div>
+		</div>		
+		
+		<div class="row item item-input" style="padding-top:5px !important">
+			<span class="col col-50 ">Cantidad de Hijos</span>
+			<div class="button-bar center col-50">
+				<button ng-click="modificarCantidadHijos(-1)" class="button button-clear"><i class="icon ion-ios-arrow-left assertive"></i></button>
+				<span class="display-numero"><b>{{cantidadHijos}}</b></span>
+				<button ng-click="modificarCantidadHijos(1)" class="button button-clear"><i class="icon ion-ios-arrow-right balanced"></i></button>
+			</div>
+		</div>
 
-        <label class="item item-input">
-          <span style="min-width: 10em;" class="input-label">Cantidad de Hijos </span>
-          <input style="text-align: right" type="number" ng-model="cantidadHijos" min=0 max="20" ng-change="calcular()"/>
-        </label>
+		        
+
       </div>
       <div class="card">
         <div class="item item-text-wrap">
