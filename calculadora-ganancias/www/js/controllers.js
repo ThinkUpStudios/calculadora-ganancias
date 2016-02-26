@@ -3,14 +3,14 @@ angular.module('starter.controllers', [])
 .controller('CalculatorCtrl', function($scope, CalculatorService) {
 
   //sueldoBruto, tieneConyuge, cantidadHijos, familiaresACargo
-  $scope.sueldoBruto = "";
-  $scope.tieneConyuge ="" ;
-  $scope.cantidadHijos ="";
-  $scope.familiaresACargo ="";
-  $scope.sueldoNeto ="";
-  $scope.impustoPorGanancias ="";
-  $scope.descuentos ="";
-  $scope.descuentosTotales ="";
+  $scope.sueldoBruto = 0;
+  $scope.tieneConyuge =false ;
+  $scope.cantidadHijos =0;
+  $scope.familiaresACargo =0;
+  $scope.sueldoNeto ='0.00';
+  $scope.impustoPorGanancias ='0.00';
+  $scope.descuentos ='0.00';
+  $scope.descuentosTotales ='0.00';
 
   $scope.calcular = function() {
      var resultados = CalculatorService.calcular($scope.sueldoBruto, $scope.tieneConyuge, $scope.cantidadHijos, $scope.familiaresACargo);

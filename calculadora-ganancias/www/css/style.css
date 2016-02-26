@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+
+.resultados-right{
+  float: right;
+}
+
+.big{
+  font-size: 1.5em;
+}
