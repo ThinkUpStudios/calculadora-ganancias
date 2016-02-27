@@ -1,8 +1,9 @@
 <ion-view title="Calculadora de ganancias">
-  <ion-content  scroll="false" style="background-color: rgba(0,0,0,0.02)">
+
     <div class="bar bar-header bar-calm" >
       <h1 class="title">Cálculo de Ganancias</h1>
     </div>
+  <ion-content  scroll="true" style="background-color: rgba(0,0,0,0.02)">
     <div class="content has-header" ng-controller="CalculatorCtrl">
       <div class="list list-inset">
         <div class="row item item-input" >
@@ -10,7 +11,7 @@
           <input class="big" style="text-align: right" type="number" min="0" ng-model="sueldoBruto" ng-change="calcular()"/>
         </div>
 
-		
+
         <ion-toggle class="toggle-chico" ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">Conyuge a Cargo
         </ion-toggle>
 
@@ -21,8 +22,8 @@
 				<span class="display-numero"><b>{{familiaresACargo}}</b></span>
 				<button ng-click="modificarFamiliaresACargo(1)" class="button button-clear"><i class="icon ion-ios-arrow-right balanced"></i></button>
 			</div>
-		</div>		
-		
+		</div>
+
 		<div class="row item item-input" style="padding-top:5px !important">
 			<span class="col col-50 ">Cantidad de Hijos</span>
 			<div class="button-bar center col-50">
@@ -32,7 +33,7 @@
 			</div>
 		</div>
 
-		        
+
 
       </div>
       <div class="card">
@@ -46,7 +47,7 @@
           <label>Desct. Totales: </label> <span class="resultados-right"> $ {{descuentosTotales}}</span>
         </div>
         <div class="item item-text-wrap item-calm" >
-         <label > Sueldo Neto:</label> <span class="resultados-right big"> $ {{sueldoNeto}}</span>
+         <label> Sueldo Neto:</label> <span class="resultados-right big"> $ {{sueldoNeto}}</span>
         </div>
 
 

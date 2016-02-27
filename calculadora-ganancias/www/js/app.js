@@ -22,7 +22,23 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
     }
   });
 })
-
+  .directive('selectOnClick', function () {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        var focusedElement;
+        element.on('click', function () {
+          if (focusedElement != this) {
+            this.select();
+            focusedElement = this;
+          }
+        });
+        element.on('blur', function () {
+          focusedElement = null;
+        });
+      }
+    };
+  })
 .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
