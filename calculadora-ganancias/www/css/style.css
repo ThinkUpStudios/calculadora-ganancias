@@ -1,1 +1,25 @@
 /* Empty. Add your own CSS if you like */
+
+.resultados-right{
+  float: right;
+  margin-left: 3em;
+}
+
+.big{
+  font-size: 1.5em;
+}
+
+.center{
+	align-items: center;
+}
+
+div.toggle-chico{
+	padding-left:10px;
+	padding-right:3em;
+}
+
+div.toggle-chico label{
+	padding-right:30px;
+}
+
+

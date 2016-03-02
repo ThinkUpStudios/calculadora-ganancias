@@ -3,14 +3,14 @@ angular.module('starter.controllers', [])
 .controller('CalculatorCtrl', function($scope, CalculatorService) {
 
   //sueldoBruto, tieneConyuge, cantidadHijos, familiaresACargo
-  $scope.sueldoBruto = "";
-  $scope.tieneConyuge ="" ;
-  $scope.cantidadHijos ="";
-  $scope.familiaresACargo ="";
-  $scope.sueldoNeto ="";
-  $scope.impustoPorGanancias ="";
-  $scope.descuentos ="";
-  $scope.descuentosTotales ="";
+  $scope.sueldoBruto = 0;
+  $scope.tieneConyuge =false ;
+  $scope.cantidadHijos =0;
+  $scope.familiaresACargo =0;
+  $scope.sueldoNeto ='0.00';
+  $scope.impustoPorGanancias ='0.00';
+  $scope.descuentos ='0.00';
+  $scope.descuentosTotales ='0.00';
 
   $scope.calcular = function() {
      var resultados = CalculatorService.calcular($scope.sueldoBruto, $scope.tieneConyuge, $scope.cantidadHijos, $scope.familiaresACargo);
@@ -19,13 +19,33 @@ angular.module('starter.controllers', [])
      $scope.descuentos = redondeo(resultados.descuentosComunes,2);
      $scope.descuentosTotales =redondeo(resultados.descuentosComunes+resultados.impuestoMensual,2);
   };
+  $scope.modificarCantidadHijos = function (valor) {
+	$scope.cantidadHijos += valor;
+	if ($scope.cantidadHijos < 0) {
+		$scope.cantidadHijos = 0;
+		
+	}
+	$scope.calcular();
 
+  };
+  $scope.modificarFamiliaresACargo = function (valor) {
+	$scope.familiaresACargo += valor;
+	if ($scope.familiaresACargo < 0) {
+		$scope.familiaresACargo = 0;
+	}
+	$scope.calcular();
+
+  };  
+  
+	
   function redondeo(numero, decimales)
   {
     var flotante = parseFloat(numero);
     var resultado = Math.round(flotante*Math.pow(10,decimales))/Math.pow(10,decimales);
     return resultado;
   }
+
 })
+
 
 

@@ -7,7 +7,7 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
+    if(window.cordova && window.cordova.plugins.Keyboard ) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -22,7 +22,23 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
     }
   });
 })
-
+  .directive('selectOnClick', function () {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        var focusedElement;
+        element.on('click', function () {
+          if (focusedElement != this) {
+            this.select();
+            focusedElement = this;
+          }
+        });
+        element.on('blur', function () {
+          focusedElement = null;
+        });
+      }
+    };
+  })
 .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
