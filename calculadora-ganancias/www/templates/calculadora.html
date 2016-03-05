@@ -1,53 +1,67 @@
-<ion-view title="Calculadora de ganancias">
+<ion-view title="Calculadora de ganancias" ng-controller="CalculatorCtrl">
 
-    <div class="bar bar-header bar-calm" >
-      <h1 class="title">Cálculo de Ganancias</h1>
+  <ion-header-bar align-title="left" class="bar-header disable-user-behavior bar-positive">
+    <div class="title title-center header-item">Calculadora de Ganancias</div>
+    <div class="buttons buttons-right header-item">
+      <span class="right-buttons">
+                <button class="button button-icon button-clear ion-android-more-vertical"
+                        ng-click="popover.show($event)">
+                </button>
+
     </div>
-  <ion-content  scroll="true" style="background-color: rgba(0,0,0,0.02)">
-    <div class="content has-header" ng-controller="CalculatorCtrl">
+  </ion-header-bar>
+  <ion-content scroll="true" style="background-color: rgba(0,0,0,0.02)">
+    <div class="content">
       <div class="card">
-        <div class="row item item-input" >
+        <div class="row item item-input">
           <span class="col col-50 ">Sueldo Bruto en $ </span>
-          <input select-on-click class="big" style="text-align: right" type="number" min="0" ng-model="sueldoBruto" ng-change="calcular()"/>
+          <input select-on-click class="big" style="text-align: right" type="number" min="0" ng-model="sueldoBruto"
+                 ng-change="calcular()"/>
         </div>
 
 
-        <ion-toggle class="toggle-chico" ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">Conyuge a Cargo
+        <ion-toggle class="toggle-chico" ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">
+          Conyuge a Cargo
         </ion-toggle>
 
-		<div class="row item item-input">
-			<span class="col col-50 ">Familiares a Cargo</span>
-			<div class="center col-50">
-				<button ng-click="modificarFamiliaresACargo(-1)" class="button button-clear"><i class="icon ion-ios-arrow-left assertive"></i></button>
-				<span class="display-numero"><b>{{familiaresACargo}}</b></span>
-				<button ng-click="modificarFamiliaresACargo(1)" class="button button-clear"><i class="icon ion-ios-arrow-right balanced"></i></button>
-			</div>
-		</div>
+        <div class="row item item-input">
+          <span class="col col-50 ">Familiares a Cargo</span>
 
-		<div class="row item item-input" style="padding-top:5px !important">
-			<span class="col col-50 ">Cantidad de Hijos</span>
-			<div class="center col-50">
-				<button ng-click="modificarCantidadHijos(-1)" class="button button-clear"><i class="icon ion-ios-arrow-left assertive"></i></button>
-				<span class="display-numero"><b>{{cantidadHijos}}</b></span>
-				<button ng-click="modificarCantidadHijos(1)" class="button button-clear"><i class="icon ion-ios-arrow-right balanced"></i></button>
-			</div>
-		</div>
+          <div class="center col-50">
+            <button ng-click="modificarFamiliaresACargo(-1)" class="button button-clear"><i
+              class="icon ion-ios-arrow-left assertive"></i></button>
+            <span class="display-numero"><b>{{familiaresACargo}}</b></span>
+            <button ng-click="modificarFamiliaresACargo(1)" class="button button-clear"><i
+              class="icon ion-ios-arrow-right balanced"></i></button>
+          </div>
+        </div>
 
+        <div class="row item item-input" style="padding-top:5px !important">
+          <span class="col col-50 ">Cantidad de Hijos</span>
+
+          <div class="center col-50">
+            <button ng-click="modificarCantidadHijos(-1)" class="button button-clear"><i
+              class="icon ion-ios-arrow-left assertive"></i></button>
+            <span class="display-numero"><b>{{cantidadHijos}}</b></span>
+            <button ng-click="modificarCantidadHijos(1)" class="button button-clear"><i
+              class="icon ion-ios-arrow-right balanced"></i></button>
+          </div>
+        </div>
 
 
       </div>
       <div class="card">
         <div class="item item-text">
-          <span >Descuento Ganancias:  </span> <span class="assertive resultados-right"> $ {{impustoPorGanancias}}</span>
+          <span>Descuento Ganancias:  </span> <span class="assertive resultados-right"> $ {{impustoPorGanancias}}</span>
         </div>
         <div class="item item-text">
-         <span >Aportes:</span> <span class="resultados-right"> $ {{descuentos}}</span>
+          <span>Aportes:</span> <span class="resultados-right"> $ {{descuentos}}</span>
         </div>
-        <div class="item item-text" >
+        <div class="item item-text">
           <span>Desct. Totales: </span> <span class="resultados-right"> $ {{descuentosTotales}}</span>
         </div>
-        <div class="item item-text item-calm" >
-         <span> Sueldo Neto:</span> <span class="resultados-right big"> $ {{sueldoNeto}}</span>
+        <div class="item item-text item-calm">
+          <span> Sueldo Neto:</span> <span class="resultados-right big"> $ {{sueldoNeto}}</span>
         </div>
 
 

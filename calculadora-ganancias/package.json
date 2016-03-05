@@ -21,7 +21,12 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-admobpro"
+    "cordova-plugin-admobpro",
+    {
+      "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+      "id": "cordova-plugin-x-socialsharing"
+    },
+    "org.apache.cordova.inappbrowser"
   ],
   "cordovaPlatforms": [
     "android"
