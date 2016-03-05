@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('CalculatorCtrl', function($scope, $location, CalculatorService, $cordovaSocialSharing, $ionicPopover) {
+.controller('CalculatorCtrl', function($scope, $location, CalculatorService, $cordovaSocialSharing, $ionicPopover, ionicMaterialInk) {
 
   //sueldoBruto, tieneConyuge, cantidadHijos, familiaresACargo
   $scope.sueldoBruto = 0;
@@ -11,6 +11,7 @@ angular.module('starter.controllers', [])
   $scope.impustoPorGanancias ='0.00';
   $scope.descuentos ='0.00';
   $scope.descuentosTotales ='0.00';
+    ionicMaterialInk.displayEffect();
 
     $ionicPopover.fromTemplateUrl('templates/menu.html', {
       scope: $scope,
@@ -22,7 +23,7 @@ angular.module('starter.controllers', [])
       window.open('market://details?id=com.ionicframework.calculadoraganancias360412', '_system');
     };
     $scope.shareAnywhere = function() {
-      $cordovaSocialSharing.share("Fácil de usar y Rápido", "Calculadora de Ganancias", null, "https://play.google.com/store/apps/details?id=com.ionicframework.calculadoraganancias360412");
+      $cordovaSocialSharing.share("Calculadora de Ganancias", "Calculadora de Ganancias", null, "https://play.google.com/store/apps/details?id=com.ionicframework.calculadoraganancias360412");
     };
   $scope.calcular = function() {
      var resultados = CalculatorService.calcular($scope.sueldoBruto, $scope.tieneConyuge, $scope.cantidadHijos, $scope.familiaresACargo);

@@ -29,4 +29,11 @@ div.toggle-chico label{
   max-height: 150px;
 }
 
+input.input-highlight{
+  background-color: rgba(100,100,250,0.02);
+  border-bottom: solid rgba(100,100,250,0.15) 2px;
+  border-radius: 7px;
+
+}
+
 
