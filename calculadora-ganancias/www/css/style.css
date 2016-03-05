@@ -21,5 +21,12 @@ div.toggle-chico{
 div.toggle-chico label{
 	padding-right:30px;
 }
+.platform-android  .popover{
+  top:90px !important;
+  max-height: 150px;
+}
+.platform-ios  .popover{
+  max-height: 150px;
+}
 
 
