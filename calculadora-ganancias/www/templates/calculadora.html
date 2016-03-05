@@ -10,12 +10,13 @@
 
     </div>
   </ion-header-bar>
-  <ion-content scroll="true" style="background-color: rgba(0,0,0,0.02)">
+  <ion-content scroll="true" style="background-color: rgba(0,0,0,0.02)" ng-controller="CalculatorCtrl">
     <div class="content">
       <div class="card">
         <div class="row item item-input">
+
           <span class="col col-50 ">Sueldo Bruto en $ </span>
-          <input select-on-click class="big" style="text-align: right" type="number" min="0" ng-model="sueldoBruto"
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="sueldoBruto"
                  ng-change="calcular()"/>
         </div>
 
