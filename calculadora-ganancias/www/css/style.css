@@ -22,11 +22,11 @@ div.toggle-chico label{
 	padding-right:30px;
 }
 .platform-android  .popover{
-  top:90px !important;
-  max-height: 150px;
+  top:4em !important;
+  max-height: 8em;
 }
 .platform-ios  .popover{
-  max-height: 150px;
+  max-height: 9em;
 }
 
 input.input-highlight{
