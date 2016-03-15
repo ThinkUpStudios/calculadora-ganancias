@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
   {
     var flotante = parseFloat(numero);
     var resultado = Math.round(flotante*Math.pow(10,decimales))/Math.pow(10,decimales);
-    return resultado;
+    return resultado.toFixed(2);
   }
 
 })
