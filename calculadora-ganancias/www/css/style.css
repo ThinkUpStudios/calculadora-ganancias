@@ -40,17 +40,9 @@ input.input-highlight{
 
 }
 
-.animate-show {
-  line-height: 20px;
-  opacity: 1;
+.item{
+  border:none;
 }
 
 
-
-
-.check-element {
-  padding: 10px;
-  border: 1px solid black;
-  background: white;
-}
 
