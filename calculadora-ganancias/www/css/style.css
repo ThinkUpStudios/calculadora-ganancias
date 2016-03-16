@@ -13,6 +13,10 @@
 	align-items: center;
 }
 
+.item.item-text.par{
+  background-color: rgba(0,0,0,0.06);
+}
+
 div.toggle-chico{
 	padding-left:10px;
 	padding-right:3em;
@@ -36,4 +40,17 @@ input.input-highlight{
 
 }
 
+.animate-show {
+  line-height: 20px;
+  opacity: 1;
+}
+
+
+
+
+.check-element {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
 
