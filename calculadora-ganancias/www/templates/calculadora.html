@@ -16,12 +16,12 @@
         <div class="row item item-input">
 
           <span class="col col-50 ">Sueldo Bruto en $ </span>
-          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="sueldoBruto"
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="input.sueldoBruto"
                  ng-change="calcular()"/>
         </div>
 
 
-        <ion-toggle class="toggle-chico" ng-model="tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">
+        <ion-toggle class="toggle-chico" ng-model="input.tieneConyuge" toggle-class="toggle-balanced" ng-change="calcular()">
           Conyuge a Cargo
         </ion-toggle>
 
@@ -31,7 +31,7 @@
           <div class="center col-50">
             <button ng-click="modificarFamiliaresACargo(-1)" class="button button-clear"><i
               class="icon ion-ios-arrow-left assertive"></i></button>
-            <span class="display-numero"><b>{{familiaresACargo}}</b></span>
+            <span class="display-numero"><b>{{input.familiaresACargo}}</b></span>
             <button ng-click="modificarFamiliaresACargo(1)" class="button button-clear"><i
               class="icon ion-ios-arrow-right balanced"></i></button>
           </div>
@@ -43,12 +43,40 @@
           <div class="center col-50">
             <button ng-click="modificarCantidadHijos(-1)" class="button button-clear"><i
               class="icon ion-ios-arrow-left assertive"></i></button>
-            <span class="display-numero"><b>{{cantidadHijos}}</b></span>
+            <span class="display-numero"><b>{{input.cantidadHijos}}</b></span>
             <button ng-click="modificarCantidadHijos(1)" class="button button-clear"><i
               class="icon ion-ios-arrow-right balanced"></i></button>
           </div>
         </div>
 
+
+        <ion-toggle class="toggle-chico" ng-model="masDeducciones" toggle-class="toggle-balanced">
+          Ver más deducciones
+        </ion-toggle>
+
+        <div ng-hide="!masDeducciones" class="row item item-input ng-hide check-element animate-show">
+          <span class="col col-50 ">Cred. Hipotecarios $ </span>
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="input.creditosHipotecarios"
+                 ng-change="calcular()"/>
+        </div>
+
+        <div  ng-hide="!masDeducciones"   class="row item item-input  ng-hide check-element animate-show">
+          <span class="col col-50 ">Servicio doméstico $ </span>
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="input.servicioDomestico"
+                 ng-change="calcular()"/>
+        </div>
+
+        <div  ng-hide="!masDeducciones"   class="row item item-input  ng-hide check-element animate-show">
+          <span class="col col-50 ">Seguro de vida $ </span>
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="input.segVida"
+                 ng-change="calcular()"/>
+        </div>
+
+        <div  ng-hide="!masDeducciones"   class="row item item-input  ng-hide check-element animate-show">
+          <span class="col col-50 ">Gastos de sepelio $ </span>
+          <input select-on-click class="big input-highlight " style="text-align: right;" type="number" min="0" ng-model="input.sepelio"
+                 ng-change="calcular()"/>
+        </div>
 
       </div>
       <div class="card">
